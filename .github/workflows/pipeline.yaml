@@ -6,13 +6,25 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.6.0
-  buld:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+          
+      - name: Run Python script
+        run: python hello.py
+  build:
     needs: [test]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.6.0
-      - uses: actions/upload-artifact@v3.1.2
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
         with:
           name: hello
           path: .
