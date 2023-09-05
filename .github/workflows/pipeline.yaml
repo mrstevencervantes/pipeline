@@ -19,9 +19,7 @@ jobs:
 
       - name: Logging step
         id: my-step
-        run: |
-          summary="The testing has completed"
-          echo "$summary" >> $GITHUB_OUTPUT
+        run: echo "::debug::Set the Octocat variable"
           
   build:
     needs: [test]
