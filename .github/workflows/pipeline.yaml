@@ -16,3 +16,4 @@ jobs:
         with:
           name: hello
           path: .
+      - run: echo "Artifact uploaded" >> $GITHUB_STEP_SUMMARY
