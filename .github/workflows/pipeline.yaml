@@ -19,7 +19,12 @@ jobs:
 
       - name: Logging step
         id: my-step
-        run: echo "::debug::Set the Octocat variable"
+        # run: echo "::debug::Set the Octocat variable"
+        run: |
+            echo "::group::My title"
+            echo "Inside group"
+            echo "Another line"
+            echo "::endgroup::"
           
   build:
     needs: [test]
