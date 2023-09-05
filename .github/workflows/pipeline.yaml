@@ -16,6 +16,13 @@ jobs:
           
       - name: Run Python script
         run: python hello.py
+
+      - name: Logging step
+        id: my-step
+        run: |
+          summary="The testing has completed"
+          echo "::set-output name=summary::$summary"
+          
   build:
     needs: [test]
     runs-on: ubuntu-latest
