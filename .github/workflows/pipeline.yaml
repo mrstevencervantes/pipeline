@@ -21,7 +21,7 @@ jobs:
         id: my-step
         run: |
           summary="The testing has completed"
-          echo "::set-output name=summary::$summary"
+          echo "$summary" >> $GITHUB_OUTPUT
           
   build:
     needs: [test]
